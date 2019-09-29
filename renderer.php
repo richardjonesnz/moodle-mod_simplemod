@@ -62,12 +62,12 @@ class mod_simplemod_renderer extends plugin_renderer_base {
      *
      * @return none
      */
-    public function render_submission_page_content() {
+    public function render_submission_page_content($mform) {
 
         $data = new stdClass();
 
         $data->heading = get_string('submissionpage', 'mod_simplemod');
-
+        $data->form = $mform->render();
         // Display the page content.
         echo $this->output->header();
         echo $this->render_from_template('mod_simplemod/submission', $data);

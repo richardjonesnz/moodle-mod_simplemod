@@ -49,3 +49,6 @@ $string['title'] = 'Activity Title: ';
 // Submissions.
 $string['submissionpage'] = 'Notes';
 $string['addnote'] = 'Add Note';
+$string['note'] = 'Note:';
+$string['noteform'] = 'Add your note';
+$string['private'] = 'private';
