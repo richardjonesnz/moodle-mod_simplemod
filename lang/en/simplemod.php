@@ -52,3 +52,4 @@ $string['addnote'] = 'Add Note';
 $string['note'] = 'Note:';
 $string['noteform'] = 'Add your note';
 $string['private'] = 'private';
+$string['notesaved'] = 'Note saved';

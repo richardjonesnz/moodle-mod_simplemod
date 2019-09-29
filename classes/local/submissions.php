@@ -15,19 +15,36 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Defines the version and other meta-info about the plugin
+ * submissions class
  *
  * @package    mod_simplemod
  * @copyright  2019 Richard Jones richardnz@outlook.com
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @see https://github.com/moodlehq/moodle-mod_simplemod
- * @see https://github.com/justinhunt/moodle-mod_simplemod
  */
+use \mod_simplemod\local\debugging;
+namespace mod_simplemod\local;
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'mod_simplemod';
-$plugin->version = 2019092901;
-$plugin->release = 'v1.0'; // Basic activity plugin template.
-$plugin->requires = 2017111301; // Moodle 3.4, 3.5, 3.6, 3.7
-$plugin->maturity = MATURITY_BETA;
+class submissions {
+
+    public static function save_note($data) {
+        global $DB, $USER;
+
+        // Check if user already has a note on this page.
+        $exists = $DB->get_record('simplemod_notes', ['simplemodid' => $data->simplemodid, 'userid' => $USER->id], '*', IGNORE_MISSING);
+
+        if ($exists) {
+            $exists->timemodified = time();
+            $exists->private = $data->private;
+            $exists->note = $data->note;
+            $DB->update_record('simplemod_notes', $exists);
+
+        } else {
+            $data->timecreated = time();
+            $data->timemodified = time();
+            $data->userid = $USER->id;
+            $DB->insert_record('simplemod_notes', $data);
+        }
+    }
+}

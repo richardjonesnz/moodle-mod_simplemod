@@ -23,6 +23,7 @@
  * @see https://github.com/moodlehq/moodle-mod_simplemod
  * @see https://github.com/justinhunt/moodle-mod_simplemod
  */
+use \mod_simplemod\local\submissions;
 
 require_once('../../config.php');
 require_once(dirname(__FILE__).'/lib.php');
@@ -49,6 +50,10 @@ class simplemod_submission_form extends moodleform {
 
         $mform->addElement('hidden', 'id', $this->_customdata['id']);
         $mform->setType('id', PARAM_INT);
+
+        $mform->addElement('hidden', 'simplemodid', $this->_customdata['simplemodid']);
+        $mform->setType('simplemodid', PARAM_INT);
+
         $this->add_action_buttons();
 
     }
@@ -78,11 +83,17 @@ $PAGE->set_title(format_string($simplemod->name));
 $viewpage = new moodle_url('/mod/simplemod/view.php', ['id' => $cm->id]);
 // Process the form:
 
-$mform = new simplemod_submission_form(null, ['id' => $cm->id]);
+$mform = new simplemod_submission_form(null, ['id' => $cm->id, 'simplemodid' => $simplemod->id]);
 
 // Cancelled, redirect to view.
 if ($mform->is_cancelled()) {
     redirect($viewpage, get_string('cancelled'), 2);
+}
+
+// If we have data, save and return to view page
+if ($data = $mform->get_data()) {
+    submissions::save_note($data);
+    redirect($viewpage, get_string('notesaved', 'mod_simplemod'), 2);
 }
 
 // The renderer performs output to the page.

@@ -23,7 +23,6 @@
  * @see https://github.com/moodlehq/moodle-mod_simplemod
  * @see https://github.com/justinhunt/moodle-mod_simplemod
  */
-use \mod_simplemod\local\debugging;
 defined('MOODLE_INTERNAL') || die();
 
 /**
