@@ -81,8 +81,8 @@ $PAGE->set_url('/mod/simplemod/submission.php', ['id' => $cm->id]);
 require_login($course, true, $cm);
 $PAGE->set_title(format_string($simplemod->name));
 $viewpage = new moodle_url('/mod/simplemod/view.php', ['id' => $cm->id]);
-// Process the form:
 
+// Process the form
 $mform = new simplemod_submission_form(null, ['id' => $cm->id, 'simplemodid' => $simplemod->id]);
 
 // Cancelled, redirect to view.
@@ -96,8 +96,13 @@ if ($data = $mform->get_data()) {
     redirect($viewpage, get_string('notesaved', 'mod_simplemod'), 2);
 }
 
+// If data exists, retrieve and set to the form.
+$data = submissions::note_exists($simplemod->id);
+if ($data) {
+    $data->id = $cm->id;
+    $mform->set_data($data);
+}
+
 // The renderer performs output to the page.
 $renderer = $PAGE->get_renderer('mod_simplemod');
-
-// Call the renderer method to display the simplemod intro content.
 $renderer->render_submission_page_content($mform);

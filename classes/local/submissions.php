@@ -32,9 +32,9 @@ class submissions {
         global $DB, $USER;
 
         // Check if user already has a note on this page.
-        $exists = $DB->get_record('simplemod_notes', ['simplemodid' => $data->simplemodid, 'userid' => $USER->id], '*', IGNORE_MISSING);
+        $exists = self::note_exists($data->simplemodid);
 
-        if ($exists) {
+        if ($data->simplemodid) {
             $exists->timemodified = time();
             $exists->private = $data->private;
             $exists->note = $data->note;
@@ -46,5 +46,11 @@ class submissions {
             $data->userid = $USER->id;
             $DB->insert_record('simplemod_notes', $data);
         }
+    }
+
+    public static function note_exists($simplemodid) {
+        global $DB, $USER;
+
+        return $DB->get_record('simplemod_notes', ['simplemodid' => $simplemodid, 'userid' => $USER->id], '*', IGNORE_MISSING);
     }
 }
