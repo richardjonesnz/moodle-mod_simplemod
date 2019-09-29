@@ -47,9 +47,30 @@ class mod_simplemod_renderer extends plugin_renderer_base {
         $data->body = format_module_intro('simplemod',
                 $simplemod, $cm->id);
 
+        // Add link to the submission page
+        $s = new \moodle_url('/mod/simplemod/submission.php',
+                ['id' => $cm->id]);
+        $data->submiturl = $s->out(false);
+
         // Display the view page content.
         echo $this->output->header();
         echo $this->render_from_template('mod_simplemod/view', $data);
+        echo $this->output->footer();
+    }
+    /**
+     * Displays the submission page content.
+     *
+     * @return none
+     */
+    public function render_submission_page_content() {
+
+        $data = new stdClass();
+
+        $data->heading = get_string('submissionpage', 'mod_simplemod');
+
+        // Display the page content.
+        echo $this->output->header();
+        echo $this->render_from_template('mod_simplemod/submission', $data);
         echo $this->output->footer();
     }
 }

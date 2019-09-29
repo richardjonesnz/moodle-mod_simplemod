@@ -45,3 +45,7 @@ $string['pluginname'] = 'simplemod';
 
 // Mod form specific simplemod settings.
 $string['title'] = 'Activity Title: ';
+
+// Submissions.
+$string['submissionpage'] = 'Notes';
+$string['addnote'] = 'Add Note';
