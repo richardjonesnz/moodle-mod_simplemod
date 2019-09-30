@@ -36,9 +36,27 @@
     <div class="card-body">
         <h2 class="card-title">{{heading}}</h2>
         {{{body}}}
-    </div>
-    <div class = "container">
-    <a href = "{{submiturl}}" class="btn btn-primary">
-            {{# str }} addnote, mod_simplemod {{/ str }}</a>
+        <br />
+        <button type="button" class="btn btn-primary" data-toggle="collapse"
+                data-target="#mod_simplemod_noteslist">{{# str }} noteslist, mod_simplemod
+                {{/ str }}</button>
+        <div id="mod_simplemod_noteslist" class="collapse">
+            <br />
+            <table class="table table-striped">
+                <thead>
+                  {{#headers}}
+                    <th>{{.}}</th>
+                  {{/headers}}
+                </thead>
+                <tbody>
+                  {{# notes}}
+                    {{> mod_simplemod/tablerow}}
+                  {{/ notes}}
+                </tbody>
+            </table>
+            <br />
+       </div>
+       <a href = "{{submiturl}}" class="btn btn-primary">
+       {{# str }} addnote, mod_simplemod {{/ str }}</a>
   </div>
 </div>

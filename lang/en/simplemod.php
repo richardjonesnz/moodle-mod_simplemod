@@ -33,9 +33,6 @@ defined('MOODLE_INTERNAL') || die();
 $string['modulename'] = 'simplemod';
 $string['modulenameplural'] = 'simplemods';
 $string['modulename_help'] = 'Use the simplemod module for... | The simplemod module allows...';
-$string['simplemod:addinstance'] = 'Add a new simplemod';
-$string['simplemod:submit'] = 'Submit simplemod';
-$string['simplemod:view'] = 'View simplemod';
 $string['simplemodfieldset'] = 'Custom example fieldset';
 $string['simplemodname'] = 'simplemod name';
 $string['simplemodname_help'] = 'This is the content of the help tooltip associated with the simplemodname field. Markdown syntax is supported.';
@@ -53,3 +50,15 @@ $string['note'] = 'Note:';
 $string['noteform'] = 'Add your note';
 $string['private'] = 'private';
 $string['notesaved'] = 'Note saved';
+
+// Capabilities.
+$string['simplemod:addinstance'] = 'Add a new simplemod';
+$string['simplemod:view'] = 'View simplemod';
+
+// List of notes.
+$string['noteslist'] = 'List of notes';
+$string['id'] = 'ID';
+$string['firstname'] = 'First name';
+$string['lastname'] = 'Last name';
+$string['notes'] = 'Notes';
+

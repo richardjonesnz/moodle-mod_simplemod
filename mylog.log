@@ -1,12 +1,155 @@
-Existing data: stdClass Object
+data; stdClass Object
 (
-    [id] => 1
-    [simplemodid] => 1
-    [userid] => 2
-    [note] => new note
-    [private] => 1
-    [timecreated] => 1569724231
-    [timemodified] => 1569724231
-    [grade] => 100
+    [heading] => 
+    [body] => <div class="no-overflow"><p>Test</p><p><img src="http://192.168.1.100/moodle37/pluginfile.php/225/mod_simplemod/intro/MoscowStBasil.png" alt="" role="presentation" class="img-responsive atto_image_button_text-bottom" width="250" height="166"><br></p></div>
+    [submiturl] => http://192.168.1.100/moodle37/mod/simplemod/submission.php?id=105
+    [notes] => Array
+        (
+            [1] => stdClass Object
+                (
+                    [id] => 1
+                    [note] => tete a tet
+
+yes indeedo
+                    [simplemodid] => 1
+                    [private] => 0
+                    [userid] => 2
+                    [firstname] => Admin
+                    [lastname] => User
+                )
+
+            [4] => stdClass Object
+                (
+                    [id] => 4
+                    [note] => janes note
+                    [simplemodid] => 1
+                    [private] => 0
+                    [userid] => 11
+                    [firstname] => Jane
+                    [lastname] => Jones
+                )
+
+        )
+
+)
+
+data; stdClass Object
+(
+    [heading] => 
+    [body] => <div class="no-overflow"><p>Test</p><p><img src="http://192.168.1.100/moodle37/pluginfile.php/225/mod_simplemod/intro/MoscowStBasil.png" alt="" role="presentation" class="img-responsive atto_image_button_text-bottom" width="250" height="166"><br></p></div>
+    [submiturl] => http://192.168.1.100/moodle37/mod/simplemod/submission.php?id=105
+    [notes] => Array
+        (
+            [1] => stdClass Object
+                (
+                    [id] => 1
+                    [note] => tete a tet
+
+yes indeedo
+                    [simplemodid] => 1
+                    [private] => 0
+                    [userid] => 2
+                    [firstname] => Admin
+                    [lastname] => User
+                )
+
+            [3] => stdClass Object
+                (
+                    [id] => 3
+                    [note] => almas rewritten
+                    [simplemodid] => 1
+                    [private] => 0
+                    [userid] => 3
+                    [firstname] => Alma
+                    [lastname] => Patel
+                )
+
+            [4] => stdClass Object
+                (
+                    [id] => 4
+                    [note] => janes note
+                    [simplemodid] => 1
+                    [private] => 0
+                    [userid] => 11
+                    [firstname] => Jane
+                    [lastname] => Jones
+                )
+
+        )
+
+)
+
+data; stdClass Object
+(
+    [heading] => 
+    [body] => <div class="no-overflow"><p>Test</p><p><img src="http://192.168.1.100/moodle37/pluginfile.php/225/mod_simplemod/intro/MoscowStBasil.png" alt="" role="presentation" class="img-responsive atto_image_button_text-bottom" width="250" height="166"><br></p></div>
+    [submiturl] => http://192.168.1.100/moodle37/mod/simplemod/submission.php?id=105
+    [notes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [firstname] => Admin
+                    [lastname] => User
+                    [note] => tete a tet
+
+yes indeedo
+                )
+
+            [1] => Array
+                (
+                    [id] => 3
+                    [firstname] => Alma
+                    [lastname] => Patel
+                    [note] => almas rewritten
+                )
+
+            [2] => Array
+                (
+                    [id] => 4
+                    [firstname] => Jane
+                    [lastname] => Jones
+                    [note] => janes note
+                )
+
+        )
+
+)
+
+data; stdClass Object
+(
+    [heading] => 
+    [body] => <div class="no-overflow"><p>Test</p><p><img src="http://192.168.1.100/moodle37/pluginfile.php/225/mod_simplemod/intro/MoscowStBasil.png" alt="" role="presentation" class="img-responsive atto_image_button_text-bottom" width="250" height="166"><br></p></div>
+    [submiturl] => http://192.168.1.100/moodle37/mod/simplemod/submission.php?id=105
+    [notes] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [firstname] => Admin
+                    [lastname] => User
+                    [note] => tete a tet
+
+yes indeedo
+                )
+
+            [1] => Array
+                (
+                    [id] => 3
+                    [firstname] => Alma
+                    [lastname] => Patel
+                    [note] => almas rewritten
+                )
+
+            [2] => Array
+                (
+                    [id] => 4
+                    [firstname] => Jane
+                    [lastname] => Jones
+                    [note] => janes note
+                )
+
+        )
+
 )
 

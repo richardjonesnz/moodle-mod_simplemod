@@ -53,4 +53,33 @@ class submissions {
 
         return $DB->get_record('simplemod_notes', ['simplemodid' => $simplemodid, 'userid' => $USER->id], '*', IGNORE_MISSING);
     }
+
+    public static function get_notes_list($simplemodid) {
+        global $DB;
+
+        $sql = "SELECT n.id, n.note, n.simplemodid, n.private, n.userid, u.firstname, u.lastname
+                  FROM {simplemod_notes} n
+                  JOIN {user} u ON u.id = n.userid
+                 WHERE n.private = :private
+                   AND n.simplemodid = :simplemodid";
+
+        $records = $DB->get_records_sql($sql, ['private' => 0, 'simplemodid' => $simplemodid]);
+        $data = array();
+        foreach ($records as $record) {
+            $row = array();
+            $row['id'] = $record->id;
+            $row['firstname'] = $record->firstname;
+            $row['lastname'] = $record->lastname;
+            $row['note'] = $record->note;
+            $data[] = $row;
+        }
+        return $data;
+    }
+    public static function get_note_headers() {
+        return [
+            get_string('id', 'mod_simplemod'),
+            get_string('firstname', 'mod_simplemod'),
+            get_string('lastname', 'mod_simplemod'),
+            get_string('note',  'mod_simplemod')];
+    }
 }

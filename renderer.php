@@ -23,6 +23,7 @@
  * @see https://github.com/moodlehq/moodle-mod_simplemod
  * @see https://github.com/justinhunt/moodle-mod_simplemod
  */
+use \mod_simplemod\local\debugging;
 defined('MOODLE_INTERNAL') || die();
 
 /**
@@ -37,7 +38,7 @@ class mod_simplemod_renderer extends plugin_renderer_base {
      * @param $cm the course module std Object
      * @return none
      */
-    public function render_view_page_content($simplemod, $cm) {
+    public function render_view_page_content($simplemod, $cm, $notes, $headers) {
 
         $data = new stdClass();
 
@@ -50,6 +51,9 @@ class mod_simplemod_renderer extends plugin_renderer_base {
         $s = new \moodle_url('/mod/simplemod/submission.php',
                 ['id' => $cm->id]);
         $data->submiturl = $s->out(false);
+
+        $data->notes = $notes;
+        $data->headers = $headers;
 
         // Display the view page content.
         echo $this->output->header();

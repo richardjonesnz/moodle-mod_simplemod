@@ -80,6 +80,7 @@ if ($id) {
 $PAGE->set_url('/mod/simplemod/submission.php', ['id' => $cm->id]);
 require_login($course, true, $cm);
 $PAGE->set_title(format_string($simplemod->name));
+
 $viewpage = new moodle_url('/mod/simplemod/view.php', ['id' => $cm->id]);
 
 // Process the form

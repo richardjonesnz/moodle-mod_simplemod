@@ -23,7 +23,7 @@
  * @see https://github.com/moodlehq/moodle-mod_simplemod
  * @see https://github.com/justinhunt/moodle-mod_simplemod */
 
-
+use \mod_simplemod\local\submissions;
 require_once('../../config.php');
 require_once(dirname(__FILE__).'/lib.php');
 
@@ -63,5 +63,9 @@ $renderer = $PAGE->get_renderer('mod_simplemod');
 if (!$simplemod->intro) {
     $simplemod->intro = '';
 }
+
+// Get a list of notes for this module.
+$notes = submissions::get_notes_list($simplemod->id);
+$headers = submissions::get_note_headers();
 // Call the renderer method to display the simplemod intro content.
-$renderer->render_view_page_content($simplemod, $cm);
+$renderer->render_view_page_content($simplemod, $cm, $notes, $headers);
