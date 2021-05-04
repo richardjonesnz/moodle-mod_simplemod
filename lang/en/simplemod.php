@@ -42,6 +42,7 @@ $string['simplemodname_help'] = 'This is the content of the help tooltip associa
 $string['simplemod'] = 'simplemod';
 $string['pluginadministration'] = 'simplemod administration';
 $string['pluginname'] = 'simplemod';
+$string['nosimplemods'] = 'No instances';
 
 // Mod form specific simplemod settings.
 $string['title'] = 'Activity Title: ';
