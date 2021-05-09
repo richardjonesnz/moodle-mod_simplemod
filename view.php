@@ -52,6 +52,7 @@ $PAGE->set_url('/mod/simplemod/view.php', array('id' => $cm->id));
 
 require_login($course, true, $cm);
 
+// Set the page information.
 $PAGE->set_title(format_string($simplemod->name));
 $PAGE->set_heading(format_string($course->fullname));
 
