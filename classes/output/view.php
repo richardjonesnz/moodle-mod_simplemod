@@ -34,8 +34,8 @@ use stdClass;
 /**
  * Simplemod: Create a new view page renderable object
  *
- * @param string title - intro page title.
- * @param int height - course module id.
+ * @param object simnplemod - instance of simplemod.
+ * @param int id - course module id.
  * @copyright  2020 Richard Jones <richardnz@outlook.com>
  */
 
